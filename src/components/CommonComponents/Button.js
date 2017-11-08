@@ -18,7 +18,7 @@ const Button = props => {
 const styles = {
   buttonStyle: {
     alignSelf: 'center',
-    backgroundColor: '#00C5CD',
+    backgroundColor: '#0066ff',
     borderRadius: 3,
     paddingLeft: 15,
     paddingRight: 15,

@@ -6,12 +6,9 @@ const Content = ({ size, color, weight, children, lines, style }) => {
     {
       fontSize: size || 10,
       fontWeight: weight,
-      fontFamily: 'ChalkboardSE-Bold',
-      textShadowColor: '#79CDCD',
-      textShadowOffset: { width: 1, height: 1 },
-      textShadowRadius: 5,
       textAlign: 'center',
-      color
+      color,
+      backgroundColor: 'transparent'
     },
     StyleSheet.create(style)
   ];

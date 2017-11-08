@@ -1,43 +1,55 @@
-let visit = [];
-let notVisit = [];
-let counts = {
-  visited: 0,
-  notVisited: 0
+let state = {
+  firstName: '',
+  lastName: '',
+  surveyId: '',
+  questions: []
 };
+let unanswered = false;
 let observers = [];
 const listData = {
-  addVisit(item) {
-    item.key = visit.length;
-    visit[visit.length] = item;
-    counts.visit = visit.length;
-    this.notify();
+  addData(data) {
+    state = Object.assign({}, state, data);
+    console.log(state)
   },
-  addNotVisit(item) {
-    item.key = notVisit.length;
-    notVisit[notVisit.length] = item;
-    counts.notVisit = notVisit.length;
-    this.notify();
+  addQuestion(question, index) {
+    state.questions[index] = question;
+    console.log('Current Questions:', state.questions);
   },
-  getCounts() {
-    return counts;
+  getQuestion(index) {
+    return state.questions[index];
   },
-  getVisit() {
-    return visit;
+  resetData() {
+    state = {
+      firstName: '',
+      lastName: '',
+      surveyId: '',
+      questions: []
+    };
   },
-  deleteItem: function(id) {
-    // console.log(id);
-    visit = visit.filter(function(obj) {
-      return obj.key !== id;
-    });
-    this.notify();
-  },
-  getNotVisit() {
-    return notVisit;
-  },
-  resetList() {
-    visit = [];
-    notVisit = [];
-    this.notify();
+  getAnswers() {
+    let temp = false;
+    state.questions.forEach(question => {
+      if(!question.hasOwnProperty('answer') || question['answer'] === "" || question['answer'] === "No Answer") {
+        question['answer'] = null;
+        unanswered = true;
+        temp = true;
+      }
+      switch(question['questiontype'].trim().toLowerCase()) {
+        case 'text input': question['questiontype'] = 'text';
+                          break;
+        case 'scale': question['questiontype'] = 'slider';
+                      break;
+        case 'yes/no': question['questiontype'] = 'boolean';
+                      break;
+      }
+    })
+    if(!temp) {
+      unanswered = false;
+    }
+    return {
+      unanswered: unanswered,
+      answers: state
+    };
   },
   subscribe(observer) {
     observers[observers.length] = observer;

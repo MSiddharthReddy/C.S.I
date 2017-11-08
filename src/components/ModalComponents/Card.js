@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 import { View, Dimensions, Animated, TouchableOpacity } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 
-const width = Dimensions.get('window').width - (Dimensions.get('window').width * (150/414));
-const height = (Dimensions.get('window').height * (390/736));
+const width = Dimensions.get('window').width - (Dimensions.get('window').width * (50/414));
+const height = (Dimensions.get('window').height * (500/736));
 
 export default class Card extends Component {
   constructor(props) {
     super(props);
-  }
-
-  componentWillMount() {
-    console.log(Dimensions.get('window').width);
   }
 
   render() {
@@ -25,17 +22,17 @@ export default class Card extends Component {
 const styles = {
   containerStyle: {
     backgroundColor: '#fff',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     flexDirection: 'column',
     position: 'relative',
-    borderRadius: 5,
-    borderWidth: 1,
-    borderColor: 'black',
-    shadowColor: 'black',
+    borderRadius: 20,
+    borderColor: '#3ECDCC',
+    shadowColor: '#3ECDCC',
     shadowOffset: { width: 2, height: 2 },
-    shadowRadius: 2,
+    shadowRadius: 5,
     shadowOpacity: 0.5,
     width,
+    height
   }
 };
 

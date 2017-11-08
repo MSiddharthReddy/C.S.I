@@ -3,6 +3,7 @@ import RouterComponent from './Router';
 
 class Main extends Component {
   render() {
+    console.disableYellowBox = true;
     return <RouterComponent />;
   }
 }

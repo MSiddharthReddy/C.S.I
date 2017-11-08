@@ -1,7 +1,12 @@
-# PayPay-JSConf17-RN
-React Native Workshop Application
-## Brought to you by the NativeXO team
-Siddharth Malkireddy & Sherman Chen
+# C.S.I
+Citizen Schools Infographics
+
+This is done as a Hackathon project for Citizen schools. This repo entails the Mobile part of the project which is a gamified survey taking experience. 
+
+The UI was designed to make survey taking easy for kids on their mobile phones. 
+
+## Brought to you by the Mavrics team
+Siddharth Malkireddy
 
 ### Things you will need
 [Xcode 8](https://developer.apple.com/xcode/), [Node (6.11.1 LTS rec)](https://nodejs.org/en/), react-native-cli, and Watchman 
@@ -23,18 +28,3 @@ Siddharth Malkireddy & Sherman Chen
 * npm install && react-native link
 * react-native run-ios to start simulator
 * if at anytime you fall behind during the workshop raise your hand and the instructor will checkout and push a copy of his branch which you can then `git checkout --track origin/<branchname>` (you may have aliased origin as a different name, run `git remote -v` to check)
-
-### What we will be building today
-* yINDER - an app for finding restaurants with a familiar feeling user interface/experience
-
-![](https://media.giphy.com/media/zPcoc9ytUpx9S/giphy.gif)
-
-[full demo here](https://youtu.be/D2sRSuS29Cw)
-
-### Goals for the workshop
-* [ ] Creating reusable components
-* [ ] Learn about animations and how to handle user interaction
-* [ ] Learning how to make http requests to server for data
-* [ ] Learn good development practices & debugging tools
-* [ ] Learn about deployment / building for production if time allows
-* [ ] Have fun

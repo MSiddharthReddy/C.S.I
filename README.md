@@ -27,4 +27,3 @@ Siddharth Malkireddy
 * git clone the repo (start branch) and cd into dir
 * npm install && react-native link
 * react-native run-ios to start simulator
-* if at anytime you fall behind during the workshop raise your hand and the instructor will checkout and push a copy of his branch which you can then `git checkout --track origin/<branchname>` (you may have aliased origin as a different name, run `git remote -v` to check)
